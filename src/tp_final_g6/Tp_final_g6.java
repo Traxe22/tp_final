@@ -74,10 +74,16 @@ public class Tp_final_g6 {
 //            clienteData.eliminarCliente(3);
 
 
-            VentaData ventaData = new VentaData();
-            DetalleVentaData detalleVentaData = new DetalleVentaData();
-            System.out.println("-> "+detalleVentaData.consultarDetallesVenta());
-            System.out.println("");
+//            VentaData ventaData = new VentaData();
+//            DetalleVentaData detalleVentaData = new DetalleVentaData();
+//            System.out.println("-> "+detalleVentaData.consultarDetallesVenta());
+//            System.out.println("");
+
+//              ProveedorData proData = new ProveedorData();
+//              System.out.println("->"+proData.obtenerProveedores());
+              ProductoData proData = new ProductoData();
+              //proData.sumarStock(6, 1);
+              proData.restarStock(6, 4);
     }
     
 }

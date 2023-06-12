@@ -37,4 +37,34 @@ public class ProductoData {
             System.out.println("Error al agregar el producto a la base de datos: " + e.getMessage());
         }
     }
+   public void sumarStock(int idProducto, int cantidad) {
+        String sql = "UPDATE producto SET stock = stock + ? WHERE idProducto = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, cantidad);
+            ps.setInt(2, idProducto);
+
+            ps.executeUpdate();
+
+            ps.close();
+            System.out.println("Stock actualizado correctamente.");
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar el stock: " + e.getMessage());
+        }
+    } 
+   public void restarStock(int idProducto, int cantidad) {
+    String sql = "UPDATE producto SET stock = stock - ? WHERE idProducto = ?";
+    try {
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setInt(1, cantidad);
+        ps.setInt(2, idProducto);
+
+        ps.executeUpdate();
+
+        ps.close();
+        System.out.println("Stock actualizado correctamente.");
+    } catch (SQLException e) {
+        System.out.println("Error al actualizar el stock: " + e.getMessage());
+    }
+}
 }

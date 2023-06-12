@@ -20,7 +20,8 @@ public class Conexion {
     private static final String DATABASE_HOST ="localhost:3306";
     private static final String DATABASE_DB ="/tp_final_g6";
     private static final String DATABASE_USUARIO ="root";
-    private static final String DATABASE_PASSWORD ="";
+    private static final String DATABASE_PASSWORD =""; 
+    
     
     private static Conexion conexion = null;
     
