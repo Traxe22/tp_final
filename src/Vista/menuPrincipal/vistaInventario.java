@@ -180,7 +180,7 @@ public class vistaInventario extends javax.swing.JFrame {
     private void llenarTabla() {
     List<Producto> productos = prodData.obtenerProductosTodos();
     for (Producto producto : productos) {
-        String estado = producto.isEstado() ? "No hay" : "Activo";
+        String estado = producto.isEstado() ? "No Activo" : "Activo";
         modelo.addRow(new Object[]{
             producto.getNombreProducto(),
             producto.getDescripcion(),
