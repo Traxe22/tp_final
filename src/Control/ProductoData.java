@@ -37,6 +37,7 @@ public class ProductoData {
             System.out.println("Error al agregar el producto a la base de datos: " + e.getMessage());
         }
     }
+    //Agregar lista de productos 
    public void sumarStock(int idProducto, int cantidad) {
         String sql = "UPDATE producto SET stock = stock + ? WHERE idProducto = ?";
         try {

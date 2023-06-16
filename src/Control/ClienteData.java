@@ -8,7 +8,9 @@ import Conexion.Conexion;
 import Modelo.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,10 +35,11 @@ public class ClienteData {
 
             // Cierra el statement
             ps.close();
-
-            System.out.println("Cliente agregado correctamente a la base de datos.");
+            JOptionPane.showMessageDialog(null, "Cliente agregado correctamente a la base de datos.");
+            
         } catch (SQLException e) {
-            System.out.println("Error al agregar el cliente a la base de datos: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al agregar al cliente a la base de datos."+e.getMessage());
+            //System.out.println("Error al agregar el cliente a la base de datos: " + e.getMessage());
         }
     }
     public void modificarCliente(Cliente cliente) {
@@ -76,6 +79,33 @@ public class ClienteData {
         } catch (SQLException e) {
             System.out.println("Error al eliminar el cliente de la base de datos: " + e.getMessage());
         }
+    }
+     public Cliente buscarClientePorId(int idCliente) {
+        String sql = "SELECT idCliente, apellido, nombre, domicilio, telefono FROM cliente WHERE idCliente = ?";
+        Cliente cliente = null;
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idCliente);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                int id = rs.getInt("idCliente");
+                String apellido = rs.getString("apellido");
+                String nombre = rs.getString("nombre");
+                String domicilio = rs.getString("domicilio");
+                String telefono = rs.getString("telefono");
+
+                cliente = new Cliente(id, apellido, nombre, domicilio, telefono);
+            }
+
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println("Error al buscar el cliente: " + e.getMessage());
+        }
+
+        return cliente;
     }
     
 }

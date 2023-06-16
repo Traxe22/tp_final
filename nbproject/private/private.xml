@@ -3,15 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Control/VentaData.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Control/ProveedorData.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Conexion/Conexion.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/tp_final_g6/Tp_final_g6.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Modelo/Venta.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Control/DetalleVentaData.java</file>
+            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Vista/menuPrincipal/principalMenu.java</file>
             <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Modelo/Cliente.java</file>
             <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Control/ClienteData.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Control/ProductoData.java</file>
+            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Vista/login/login.java</file>
+            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Vista/menuPrincipal/agregarCliente.java</file>
         </group>
     </open-files>
 </project-private>
