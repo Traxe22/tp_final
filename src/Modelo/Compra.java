@@ -17,6 +17,7 @@ public class Compra {
 
     public Compra() {
     }
+    
 
     public Compra(int idCompra, int idProveedor, LocalDate fecha) {
         this.idCompra = idCompra;

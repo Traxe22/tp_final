@@ -39,6 +39,66 @@ public class ProveedorData {
            System.out.println("Error al agregar el Proveedor." +e.getMessage());
        }
    } 
+   
+   public Proveedor buscarProveedor(int idProveedor) {
+        Proveedor proveedor = null;
+        String sql = "SELECT idProveedor, razonSocial, domicilio, telefono FROM proveedor WHERE idProveedor = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idProveedor);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                proveedor = new Proveedor();
+                proveedor.setIdProveedor(rs.getInt("idProveedor"));
+                proveedor.setRazonSocial(rs.getString("razonSocial"));
+                proveedor.setDomicilio(rs.getString("domicilio"));
+                proveedor.setTelefono(rs.getString("telefono"));
+            }
+
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println("Error al buscar el proveedor en la base de datos: " + e.getMessage());
+        }
+
+        return proveedor;
+    }
+   
+   public void modificarProveedor(Proveedor proveedor) {
+        String sql = "UPDATE proveedor SET razonSocial = ?, domicilio = ?, telefono = ? WHERE idProveedor = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, proveedor.getRazonSocial());
+            ps.setString(2, proveedor.getDomicilio());
+            ps.setString(3, proveedor.getTelefono());
+            ps.setInt(4, proveedor.getIdProveedor());
+
+            ps.executeUpdate();
+
+            ps.close();
+            System.out.println("Proveedor modificado correctamente en la base de datos.");
+        } catch (SQLException e) {
+            System.out.println("Error al modificar el proveedor en la base de datos: " + e.getMessage());
+        }
+    }
+   
+   public void eliminarProveedor(int idProveedor) {
+        String sql = "DELETE FROM proveedor WHERE idProveedor = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idProveedor);
+
+            ps.executeUpdate();
+
+            ps.close();
+            System.out.println("Proveedor eliminado correctamente de la base de datos.");
+        } catch (SQLException e) {
+            System.out.println("Error al eliminar el proveedor de la base de datos: " + e.getMessage());
+        }
+    }
+   
+   
    public List<Proveedor> obtenerProveedores(){
        List<Proveedor> proveedores = new ArrayList<>();
        String sql = "SELECT * FROM proveedor";

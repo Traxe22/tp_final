@@ -7,6 +7,7 @@ package Control;
 import Conexion.Conexion;
 import Modelo.Compra;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -25,6 +26,22 @@ public class CompraData {
     public CompraData() {
         con = Conexion.getConnection();
     }
+    
+//    public void registrarCompra(int idProveedor, Date fechaCompra) {
+//    String sql = "INSERT INTO compra (idProveedor, fechaCompra) VALUES (?, ?)";
+//    try {
+//        PreparedStatement ps = con.prepareStatement(sql);
+//        ps.setInt(1, idProveedor);
+//        ps.setDate(2, new java.sql.Date(fechaCompra.getTime()));
+//        
+//        ps.executeUpdate();
+//        
+//        ps.close();
+//        System.out.println("Compra registrada correctamente en la base de datos.");
+//    } catch (SQLException e) {
+//        System.out.println("Error al registrar la compra en la base de datos: " + e.getMessage());
+//    }
+//}
 
     public void registrarCompra(Compra compra) {
         String sql = "INSERT INTO compra(idProveedor, fecha) VALUES (?, ?)";
@@ -75,4 +92,5 @@ public class CompraData {
 
         return compras;
     }
+    
 }

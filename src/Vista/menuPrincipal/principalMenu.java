@@ -284,14 +284,23 @@ public class principalMenu extends javax.swing.JFrame {
 
     private void BtnProovedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProovedoresActionPerformed
         // TODO add your handling code here:
+        dispose();
+        vistaProveedor pro = new vistaProveedor();
+        pro.setVisible(true);
     }//GEN-LAST:event_BtnProovedoresActionPerformed
 
     private void BtnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInventarioActionPerformed
         // TODO add your handling code here:
+        dispose();
+        vistaInventario inven = new vistaInventario();
+        inven.setVisible(true);
     }//GEN-LAST:event_BtnInventarioActionPerformed
 
     private void BtnCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCompraActionPerformed
         // TODO add your handling code here:
+        dispose();
+        vistaCompra comp = new vistaCompra();
+        comp.setVisible(true);
     }//GEN-LAST:event_BtnCompraActionPerformed
 
     private void BtnVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentaActionPerformed

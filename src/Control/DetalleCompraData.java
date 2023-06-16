@@ -25,7 +25,7 @@ public class DetalleCompraData {
        con =Conexion.getConnection(); 
     }
     public void agregarDetalleCompra(DetalleCompra detalleCompra) {
-        String sql = "INSERT INTO detallecompra(cantidad, precioCosto, idCompra, idProducto) VALUES (?, ?, ?, ?)";
+    String sql = "INSERT INTO detallecompra(cantidad, precioCosto, idCompra, idProducto) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, detalleCompra.getCantidad());
@@ -40,7 +40,7 @@ public class DetalleCompraData {
         } catch (SQLException e) {
             System.out.println("Error al guardar el detalle de compra: " + e.getMessage());
         }
-    }
+}
     public List<DetalleCompra> consultarDetallesCompra() {
         List<DetalleCompra> detallesCompra = new ArrayList<>();
 
@@ -70,4 +70,26 @@ public class DetalleCompraData {
 
     
     }
+    
+    public List<DetalleCompra> obtenerCompras() {
+    List<DetalleCompra> compras = new ArrayList<>();
+    String sql = "SELECT * FROM compra";
+    try {
+        PreparedStatement ps = con.prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            int cantidad = rs.getInt("cantidad");
+            double precioCosto = rs.getDouble("precioCosto");
+            int idCompra = rs.getInt("idCompra");
+            int idProducto = rs.getInt("idProducto");
+            DetalleCompra compra = new DetalleCompra(cantidad, precioCosto, idCompra, idProducto);
+            compras.add(compra);
+        }
+        rs.close();
+        ps.close();
+    } catch (SQLException e) {
+        System.out.println("Error al obtener las compras: " + e.getMessage());
+    }
+    return compras;
+}
 }
