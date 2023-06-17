@@ -10,6 +10,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -107,5 +110,26 @@ public class ClienteData {
 
         return cliente;
     }
+     
+     public List<Cliente> obtenerClientes() {
+        List<Cliente> clientes = new ArrayList<>();
+        String sql = "SELECT idCliente, nombre, apellido FROM cliente";
+        try {
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                int id = rs.getInt("idCliente");
+                String nombre = rs.getString("nombre");
+                String apellido = rs.getString("apellido");
+                Cliente cliente = new Cliente(id, nombre, apellido);
+                clientes.add(cliente);
+            }
+            rs.close();
+            statement.close();
+        } catch (SQLException e) {
+            System.out.println("Error al obtener los clientes: " + e.getMessage());
+        }
+        return clientes;
+}
     
 }

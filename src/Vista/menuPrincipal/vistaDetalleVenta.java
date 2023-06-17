@@ -4,17 +4,39 @@
  */
 package Vista.menuPrincipal;
 
+import Control.ClienteData;
+import Control.DetalleVentaData;
+import Modelo.Cliente;
+import Modelo.DetalleCompra;
+import Modelo.DetalleVenta;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Hugo
  */
 public class vistaDetalleVenta extends javax.swing.JFrame {
-
+    private DefaultTableModel modelo = new DefaultTableModel();
+    private ClienteData clData = new ClienteData();
+    private DetalleVentaData dvd = new DetalleVentaData();
     /**
      * Creates new form vistaDetalleVenta
      */
     public vistaDetalleVenta() {
         initComponents();
+        cargarClientes();
+        armarCabecera();
+        llenarTabla();
+        jC_Clientes.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                llenarTabla(); // Llamar al método para actualizar la tabla al seleccionar un proveedor
+            }
+        });
+        
     }
 
     /**
@@ -26,17 +48,61 @@ public class vistaDetalleVenta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jC_Clientes = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jT_HistorialdeVentas = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setText("Historial de Ventas");
+
+        jLabel2.setText("Cliente");
+
+        jT_HistorialdeVentas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jT_HistorialdeVentas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 596, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(279, 279, 279)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jC_Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(173, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(169, 169, 169))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 530, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jC_Clientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +144,59 @@ public class vistaDetalleVenta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<Cliente> jC_Clientes;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jT_HistorialdeVentas;
     // End of variables declaration//GEN-END:variables
+
+    private void armarCabecera() {
+        ArrayList titulos= new ArrayList();
+        titulos.add("Cantidad");
+        titulos.add("Precio");
+        titulos.add("ID Venta");
+        titulos.add("ID Producto");
+        modelo = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                titulos.add("Cantidad");
+                titulos.add("Precio");
+                titulos.add("ID Venta");
+                titulos.add("ID Producto");
+                return false;
+            }
+
+        };
+        for (Object titulo : titulos) {
+            modelo.addColumn(titulo);
+            jT_HistorialdeVentas.setModel(modelo);
+        }
+    }
+
+    private void llenarTabla() {
+        Cliente clienteSelec = (Cliente) jC_Clientes.getSelectedItem();
+        List<DetalleVenta> detalleVenta = dvd.mostrarVenta(clienteSelec.getIdCliente());
+        DefaultTableModel modelo = (DefaultTableModel) jT_HistorialdeVentas.getModel();
+        modelo.setRowCount(0); // Limpiar la tabla antes de agregar los datos
+
+        for (DetalleVenta venta : detalleVenta) {
+            Object[] fila = new Object[4];
+            fila[0] = venta.getCantidad();
+            fila[1] = venta.getPrecioVenta();
+            fila[2] = venta.getIdVenta();
+            fila[3] = venta.getIdProducto();
+            modelo.addRow(fila);
+        }
+
+        jT_HistorialdeVentas.setModel(modelo);
+
+    }
+
+    private void cargarClientes() {
+        List<Cliente> client = clData.obtenerClientes();
+        for (Cliente cliente : client) {
+            jC_Clientes.addItem(cliente);
+        }
+    }
 }

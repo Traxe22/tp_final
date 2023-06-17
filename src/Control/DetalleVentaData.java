@@ -72,4 +72,32 @@ public class DetalleVentaData {
 
     return detallesVenta;
 }
+    
+    public List<DetalleVenta> mostrarVenta(int idCliente) {
+        List<DetalleVenta> ventas = new ArrayList<>();
+        String sql = "SELECT dv.cantidad, dv.precioVenta, v.idVenta, p.idProducto " +
+                     "FROM detalleventa dv " +
+                     "INNER JOIN venta v ON dv.idVenta = v.idVenta " +
+                     "INNER JOIN producto p ON dv.idProducto = p.idProducto " +
+                     "WHERE v.idCliente = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idCliente);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                int cantidad = rs.getInt("cantidad");
+                double precio = rs.getDouble("precioVenta");
+                int idVenta = rs.getInt("idVenta");
+                int idProducto = rs.getInt("idProducto");
+                DetalleVenta venta = new DetalleVenta(cantidad, idVenta, precio, idProducto);
+                ventas.add(venta);
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println("Error al obtener las ventas del cliente: " + e.getMessage());
+        }
+        return ventas;
+
+}
 }

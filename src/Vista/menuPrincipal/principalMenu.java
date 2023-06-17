@@ -306,6 +306,9 @@ public class principalMenu extends javax.swing.JFrame {
 
     private void BtnVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnVentaActionPerformed
         // TODO add your handling code here:
+        dispose();
+        vistaVenta venta = new vistaVenta();
+        venta.setVisible(true);
     }//GEN-LAST:event_BtnVentaActionPerformed
 
     private void jP_headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jP_headerMousePressed

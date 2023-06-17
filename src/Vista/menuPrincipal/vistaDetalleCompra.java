@@ -245,12 +245,9 @@ public class vistaDetalleCompra extends javax.swing.JFrame {
         JL_Titulo2.setForeground(new java.awt.Color(255, 255, 255));
         JL_Titulo2.setText("PROVEEDORES");
 
-        jC_listaProveedores.setBackground(new java.awt.Color(255, 255, 255));
-        jC_listaProveedores.setForeground(new java.awt.Color(0, 0, 0));
         jC_listaProveedores.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         jT_tabla_historialDeCompras.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
-        jT_tabla_historialDeCompras.setForeground(new java.awt.Color(0, 0, 0));
         jT_tabla_historialDeCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -286,7 +283,7 @@ public class vistaDetalleCompra extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jP_header, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(JL_Titulo)
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

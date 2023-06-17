@@ -27,21 +27,36 @@ public class VentaData {
         con = Conexion.getConnection();
     }
     public void registrarVenta(Venta venta) {
-        String sql = "INSERT INTO venta(idProducto, idCliente, fecha) VALUES (?, ?, ?)";
-        try {
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, venta.getProducto().getIdProducto());
-            ps.setInt(2, venta.getCliente().getIdCliente());
-            ps.setDate(3, java.sql.Date.valueOf(venta.getFechaVenta()));
-            
-            ps.executeUpdate();
-            
-            ps.close();
-            System.out.println("Venta registrada correctamente.");
-        } catch (SQLException e) {
-            System.out.println("No se pudo registrar la venta correctamente: " + e.getMessage());
+        String sql = "INSERT INTO venta(fecha, idCliente) VALUES (?, ?)";
+    try {
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setDate(1, java.sql.Date.valueOf(venta.getFechaVenta()));
+        ps.setInt(2, venta.getIdCliente());
+        
+        ps.executeUpdate();
+        
+        ps.close();
+        System.out.println("Venta registrada correctamente.");
+    } catch (SQLException e) {
+        System.out.println("No se pudo registrar la venta correctamente: " + e.getMessage());
+    }
+
+    }
+    public int obtenerUltimoIddeVenta() {
+    int ultimoId = 0;
+    String sql = "SELECT idVenta FROM venta ORDER BY idVenta DESC LIMIT 1";
+    try {
+        Statement statement = con.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        if (rs.next()) {
+            ultimoId = rs.getInt("idVenta");
         }
+        rs.close();
+        statement.close();
+    } catch (SQLException e) {
+        System.out.println("Error al obtener el último ID de venta: " + e.getMessage());
+    }
+    return ultimoId;
+}
     }
     
-    
-}

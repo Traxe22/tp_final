@@ -198,9 +198,7 @@ public class agregarCliente extends javax.swing.JFrame {
 
         jT_idCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
 
-        jB_buscarCliente.setBackground(new java.awt.Color(255, 255, 255));
         jB_buscarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_buscarCliente.setForeground(new java.awt.Color(0, 0, 0));
         jB_buscarCliente.setText("Buscar");
         jB_buscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jB_buscarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -234,9 +232,7 @@ public class agregarCliente extends javax.swing.JFrame {
 
         jT_telefonoCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
 
-        jB_AgregarCliente.setBackground(new java.awt.Color(255, 255, 255));
         jB_AgregarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_AgregarCliente.setForeground(new java.awt.Color(0, 0, 0));
         jB_AgregarCliente.setText("Agregar ");
         jB_AgregarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_AgregarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -245,9 +241,7 @@ public class agregarCliente extends javax.swing.JFrame {
             }
         });
 
-        jB_EditarCliente.setBackground(new java.awt.Color(255, 255, 255));
         jB_EditarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_EditarCliente.setForeground(new java.awt.Color(0, 0, 0));
         jB_EditarCliente.setText("Editar");
         jB_EditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_EditarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -261,9 +255,7 @@ public class agregarCliente extends javax.swing.JFrame {
             }
         });
 
-        jB_Limpiar.setBackground(new java.awt.Color(255, 255, 255));
         jB_Limpiar.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_Limpiar.setForeground(new java.awt.Color(0, 0, 0));
         jB_Limpiar.setText("Limpiar");
         jB_Limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_Limpiar.addActionListener(new java.awt.event.ActionListener() {

@@ -2,17 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Vista/menuPrincipal/vistaDetalleCompra.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Vista/menuPrincipal/principalMenu.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Vista/menuPrincipal/vistaCompra.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Vista/menuPrincipal/vistaInventario.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Vista/menuPrincipal/vistaProveedor.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Modelo/DetalleCompra.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Control/CompraData.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Control/DetalleCompraData.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Control/ProductoData.java</file>
-            <file>file:/G:/Mi%20unidad/Laboratorio/tp_final_g6/src/Modelo/Producto.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

@@ -82,10 +82,11 @@ public class ProductoData {
         while (rs.next()) {
             int idProducto = rs.getInt("idProducto");
             String nombreProducto = rs.getString("nombreProducto");
+            String descripcion = rs.getString("descripcion");
             double precioActual = rs.getDouble("precioActual");
             int stock = rs.getInt("stock");
             //boolean estado = rs.getBoolean("estado");
-            Producto producto = new Producto(idProducto, nombreProducto, precioActual, stock);
+            Producto producto = new Producto(idProducto, nombreProducto, descripcion, precioActual, stock);
             productos.add(producto);
         }
         rs.close();
@@ -133,6 +134,28 @@ public class ProductoData {
         System.out.println("Error al obtener el último ID de producto: " + e.getMessage());
     }
     return ultimoId;
+}
+   public Producto buscarProductoPorId(int idProducto) {
+    Producto producto = null;
+    String sql = "SELECT * FROM producto WHERE idProducto = ?";
+    try {
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setInt(1, idProducto);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            int id = rs.getInt("idProducto");
+            String nombre = rs.getString("nombreProducto");
+            double precio = rs.getDouble("precioActual");
+            int stock = rs.getInt("stock");
+            boolean estado = rs.getBoolean("estado");
+            producto = new Producto(id, nombre, precio, stock, estado);
+        }
+        rs.close();
+        ps.close();
+    } catch (SQLException e) {
+        System.out.println("Error al buscar el producto: " + e.getMessage());
+    }
+    return producto;
 }
    
 //   public Producto obtenerProductoPorNombre(String nombre) {

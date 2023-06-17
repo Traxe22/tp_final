@@ -29,6 +29,7 @@ import javax.swing.table.DefaultTableModel;
 public class vistaCompra extends javax.swing.JFrame {
 
     private DefaultTableModel modelo = new DefaultTableModel();
+    private DefaultTableModel modeloCompra = new DefaultTableModel();
     private ProveedorData proveData = new ProveedorData();
     private CompraData comData = new CompraData();
     private ProductoData proData = new ProductoData();
@@ -234,9 +235,7 @@ public class vistaCompra extends javax.swing.JFrame {
         jL_IDProveedor.setForeground(new java.awt.Color(255, 255, 255));
         jL_IDProveedor.setText("ID PROVEEDOR");
 
-        jB_buscarProveedor_compra.setBackground(new java.awt.Color(255, 255, 255));
         jB_buscarProveedor_compra.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
-        jB_buscarProveedor_compra.setForeground(new java.awt.Color(0, 0, 0));
         jB_buscarProveedor_compra.setText("Buscar");
         jB_buscarProveedor_compra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,7 +243,8 @@ public class vistaCompra extends javax.swing.JFrame {
             }
         });
 
-        jT_TablaProductos.setBackground(new java.awt.Color(255, 255, 255));
+        jT_mostrarProveedor_compra.setEditable(false);
+
         jT_TablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -325,7 +325,6 @@ public class vistaCompra extends javax.swing.JFrame {
         jL_IdCompraTabla.setForeground(new java.awt.Color(255, 255, 255));
         jL_IdCompraTabla.setText("ID COMPRA");
 
-        jT_idCompra_mostrar.setBackground(new java.awt.Color(255, 255, 255));
         jT_idCompra_mostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -343,7 +342,6 @@ public class vistaCompra extends javax.swing.JFrame {
         jL_IdProductoTabla.setForeground(new java.awt.Color(255, 255, 255));
         jL_IdProductoTabla.setText("ID PRODUCTO");
 
-        jT_idProdcuto_mostrar.setBackground(new java.awt.Color(255, 255, 255));
         jT_idProdcuto_mostrar.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -489,9 +487,9 @@ public class vistaCompra extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jC_FechaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(49, 96, Short.MAX_VALUE))
+                                .addGap(49, 107, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 16, Short.MAX_VALUE)
+                                .addGap(0, 30, Short.MAX_VALUE)
                                 .addComponent(jB_compra)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jB_guardarDetalle)
@@ -740,7 +738,7 @@ public class vistaCompra extends javax.swing.JFrame {
     private void cabeceraIdCompra() {
         ArrayList titulos = new ArrayList();
         titulos.add("IDCompra"); // Solo un título para la columna
-        modelo = new DefaultTableModel() {
+        modeloCompra = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
                 titulos.add("IDCompra");
@@ -748,9 +746,9 @@ public class vistaCompra extends javax.swing.JFrame {
             }
         };
         for (Object titulo : titulos) {
-            modelo.addColumn(titulo);
+            modeloCompra.addColumn(titulo);
         }
-        jT_idCompra_mostrar.setModel(modelo);
+        jT_idCompra_mostrar.setModel(modeloCompra);
     }
 
     public void llenarTabla() {
@@ -759,16 +757,12 @@ public class vistaCompra extends javax.swing.JFrame {
             modelo.addRow(new Object[]{proveedor.getIdProveedor(), proveedor.getRazonSocial()});
         }
     }
-//    List<Producto> productos = proData.obtenerProductos();
-//   // borrarTabla(); // Eliminar los datos existentes en la tabla antes de mostrar los nuevos datos
-//    for (Producto producto : productos) {
-//        modelo.addRow(new Object[]{producto.getIdProducto(), producto.getNombreProducto(), producto.getPrecioActual(), producto.getStock()});
-//    }
+
 
     private void llenarIdCompra() {
-        modelo.setRowCount(0);
+        modeloCompra.setRowCount(0);
         idCompra = comData.obtenerUltimoIdCompra();
-        modelo.addRow(new Object[]{idCompra}); // Agrega solo el ID de la compra a la tabla
+        modeloCompra.addRow(new Object[]{idCompra}); // Agrega solo el ID de la compra a la tabla
     }
 
     private void llenarIdProducto() {

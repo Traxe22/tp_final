@@ -25,6 +25,15 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    public Cliente(int idCliente, String apellido, String nombre) {
+        this.idCliente = idCliente;
+        this.apellido = apellido;
+        this.nombre = nombre;
+    }
+
+    
+    
+
     public Cliente(int idCliente, String apellido, String nombre, String domicilio, String telefono) {
         this.idCliente = idCliente;
         this.apellido = apellido;
@@ -75,7 +84,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Cliente{" + "idCliente=" + idCliente + ", apellido=" + apellido + ", nombre=" + nombre + ", domicilio=" + domicilio + ", telefono=" + telefono + '}';
+        return  idCliente + ", " + apellido + ", " + nombre  ;
     }
     
     

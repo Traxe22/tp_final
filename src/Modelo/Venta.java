@@ -11,33 +11,38 @@ import java.time.LocalDate;
  * @author Hugo
  */
 public class Venta {
-    private Producto producto;
-    private Cliente cliente;
+    private int idProducto;
+    private int idCliente;
     private LocalDate fechaVenta;
 
     public Venta() {
     }
 
-    public Venta(Producto producto, Cliente cliente, LocalDate fechaVenta) {
-        this.producto = producto;
-        this.cliente = cliente;
+    public Venta(int idCliente, LocalDate fechaVenta) {
+        this.idCliente = idCliente;
         this.fechaVenta = fechaVenta;
     }
 
-    public Producto getProducto() {
-        return producto;
+    public Venta(int idProducto, int idCliente, LocalDate fechaVenta) {
+        this.idProducto = idProducto;
+        this.idCliente = idCliente;
+        this.fechaVenta = fechaVenta;
     }
 
-    public void setProducto(Producto producto) {
-        this.producto = producto;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     public LocalDate getFechaVenta() {
@@ -50,10 +55,7 @@ public class Venta {
 
     @Override
     public String toString() {
-        return "Venta{" + "producto=" + producto + ", cliente=" + cliente + ", fechaVenta=" + fechaVenta + '}';
+        return "Venta{" + "idProducto=" + idProducto + ", idCliente=" + idCliente + ", fechaVenta=" + fechaVenta + '}';
     }
-
-    
-    
     
 }
