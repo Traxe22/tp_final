@@ -29,17 +29,17 @@ public class principalMenu extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jP_principal = new javax.swing.JPanel();
+        jP_header = new javax.swing.JPanel();
+        HomeBtn = new javax.swing.JPanel();
+        HomeBtnTxt = new javax.swing.JLabel();
+        BtnExit = new javax.swing.JPanel();
+        BtnExitTxt = new javax.swing.JLabel();
         jL_logo = new javax.swing.JLabel();
         BtnCliente = new javax.swing.JButton();
         BtnProovedores = new javax.swing.JButton();
         BtnInventario = new javax.swing.JButton();
         BtnCompra = new javax.swing.JButton();
         BtnVenta = new javax.swing.JButton();
-        jP_header = new javax.swing.JPanel();
-        HomeBtn = new javax.swing.JPanel();
-        HomeBtnTxt = new javax.swing.JLabel();
-        BtnExit = new javax.swing.JPanel();
-        BtnExitTxt = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -54,99 +54,6 @@ public class principalMenu extends javax.swing.JFrame {
         jP_principal.setMinimumSize(new java.awt.Dimension(800, 500));
         jP_principal.setPreferredSize(new java.awt.Dimension(800, 500));
         jP_principal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jL_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/imagenes/Sin título-3.png"))); // NOI18N
-        jP_principal.add(jL_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 70, 150, 100));
-
-        BtnCliente.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        BtnCliente.setText("CLIENTES");
-        BtnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BtnClienteMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BtnClienteMouseExited(evt);
-            }
-        });
-        BtnCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnClienteActionPerformed(evt);
-            }
-        });
-        jP_principal.add(BtnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 140, 60));
-
-        BtnProovedores.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        BtnProovedores.setText("PROOVEDORES");
-        BtnProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnProovedores.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BtnProovedoresMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BtnProovedoresMouseExited(evt);
-            }
-        });
-        BtnProovedores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnProovedoresActionPerformed(evt);
-            }
-        });
-        jP_principal.add(BtnProovedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 190, 60));
-
-        BtnInventario.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        BtnInventario.setText("INVENTARIO");
-        BtnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnInventario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BtnInventarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BtnInventarioMouseExited(evt);
-            }
-        });
-        BtnInventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnInventarioActionPerformed(evt);
-            }
-        });
-        jP_principal.add(BtnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 170, 60));
-
-        BtnCompra.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        BtnCompra.setText("COMPRA");
-        BtnCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnCompra.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BtnCompraMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BtnCompraMouseExited(evt);
-            }
-        });
-        BtnCompra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnCompraActionPerformed(evt);
-            }
-        });
-        jP_principal.add(BtnCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 170, 60));
-
-        BtnVenta.setFont(new java.awt.Font("Verdana", 1, 18)); // NOI18N
-        BtnVenta.setText("VENTA");
-        BtnVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        BtnVenta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                BtnVentaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                BtnVentaMouseExited(evt);
-            }
-        });
-        BtnVenta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BtnVentaActionPerformed(evt);
-            }
-        });
-        jP_principal.add(BtnVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 170, 60));
 
         jP_header.setBackground(new java.awt.Color(51, 51, 51));
         jP_header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -258,6 +165,100 @@ public class principalMenu extends javax.swing.JFrame {
 
         jP_principal.add(jP_header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 70));
 
+        jL_logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/imagenes/Sin título-3.png"))); // NOI18N
+        jP_principal.add(jL_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 800, 100));
+
+        BtnCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        BtnCliente.setText("CLIENTES");
+        BtnCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BtnClienteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BtnClienteMouseExited(evt);
+            }
+        });
+        BtnCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnClienteActionPerformed(evt);
+            }
+        });
+        jP_principal.add(BtnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, 140, 60));
+
+        BtnProovedores.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        BtnProovedores.setText("PROOVEDORES");
+        BtnProovedores.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnProovedores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BtnProovedoresMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BtnProovedoresMouseExited(evt);
+            }
+        });
+        BtnProovedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnProovedoresActionPerformed(evt);
+            }
+        });
+        jP_principal.add(BtnProovedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 240, 190, 60));
+
+        BtnInventario.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        BtnInventario.setText("INVENTARIO");
+        BtnInventario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnInventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BtnInventarioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BtnInventarioMouseExited(evt);
+            }
+        });
+        BtnInventario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnInventarioActionPerformed(evt);
+            }
+        });
+        jP_principal.add(BtnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 170, 60));
+
+        BtnCompra.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        BtnCompra.setText("COMPRA");
+        BtnCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnCompra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BtnCompraMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BtnCompraMouseExited(evt);
+            }
+        });
+        BtnCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnCompraActionPerformed(evt);
+            }
+        });
+        jP_principal.add(BtnCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 340, 170, 60));
+
+        BtnVenta.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        BtnVenta.setText("VENTA");
+        BtnVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        BtnVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                BtnVentaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                BtnVentaMouseExited(evt);
+            }
+        });
+        BtnVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnVentaActionPerformed(evt);
+            }
+        });
+        jP_principal.add(BtnVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 170, 60));
+
         jPanel1.add(jP_principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -279,7 +280,7 @@ public class principalMenu extends javax.swing.JFrame {
         dispose();
         agregarCliente agg = new agregarCliente();
         agg.setVisible(true);
-        
+
     }//GEN-LAST:event_BtnClienteActionPerformed
 
     private void BtnProovedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProovedoresActionPerformed
@@ -352,12 +353,14 @@ public class principalMenu extends javax.swing.JFrame {
         BtnCliente.setForeground(Color.BLACK);
     }//GEN-LAST:event_BtnClienteMouseExited
 
+    // Volver al Login
     private void HomeBtnTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeBtnTxtMouseClicked
         dispose();
         login login = new login();
         login.setVisible(true);
     }//GEN-LAST:event_HomeBtnTxtMouseClicked
 
+    //Botones Hover
     private void BtnProovedoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnProovedoresMouseEntered
         BtnProovedores.setBackground(Color.MAGENTA);
         BtnProovedores.setForeground(Color.WHITE);

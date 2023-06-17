@@ -93,4 +93,21 @@ public class CompraData {
         return compras;
     }
     
+    public int obtenerUltimoIdCompra() {
+    int ultimoId = 0;
+    String sql = "SELECT idCompra FROM compra ORDER BY idCompra DESC LIMIT 1";
+    try {
+        Statement statement = con.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        if (rs.next()) {
+            ultimoId = rs.getInt("idCompra");
+        }
+        rs.close();
+        statement.close();
+    } catch (SQLException e) {
+        System.out.println("Error al obtener el último ID de compra: " + e.getMessage());
+    }
+    return ultimoId;
+}
+    
 }

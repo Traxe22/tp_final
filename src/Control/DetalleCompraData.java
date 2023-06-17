@@ -41,35 +41,34 @@ public class DetalleCompraData {
             System.out.println("Error al guardar el detalle de compra: " + e.getMessage());
         }
 }
-    public List<DetalleCompra> consultarDetallesCompra() {
-        List<DetalleCompra> detallesCompra = new ArrayList<>();
-
-        String sql = "SELECT idDetalle, cantidad, precioCosto, idCompra, idProducto FROM detallecompra";
-
-        try {
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery(sql);
-
-            while (rs.next()) {
-                int idDetalle = rs.getInt("idDetalle");
-                int cantidad = rs.getInt("cantidad");
-                double precioCosto = rs.getDouble("precioCosto");
-                int idCompra = rs.getInt("idCompra");
-                int idProducto = rs.getInt("idProducto");
-
-                DetalleCompra detalleCompra = new DetalleCompra(idDetalle, cantidad, precioCosto, idCompra, idProducto);
-                detallesCompra.add(detalleCompra);
-            }
-
-            rs.close();
-            stmt.close();
-        } catch (SQLException e) {
-            System.out.println("Error al consultar los detalles de compra: " + e.getMessage());
-}
-        return detallesCompra;
-
-    
+    public List<DetalleCompra> obtenerDetallesCompraPorProveedor(int idProveedor) {
+    List<DetalleCompra> detallesCompra = new ArrayList<>();
+    String sql = "SELECT dc.idDetalle, dc.cantidad, dc.precioCosto, dc.idCompra, dc.idProducto " +
+                 "FROM detallecompra dc " +
+                 "JOIN compra c ON dc.idCompra = c.idCompra " +
+                 "JOIN proveedor p ON c.idProveedor = p.idProveedor " +
+                 "WHERE p.idProveedor = ?";
+    try {
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setInt(1, idProveedor);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            int idDetalle = rs.getInt("idDetalle");
+            int cantidad = rs.getInt("cantidad");
+            double precioCosto = rs.getDouble("precioCosto");
+            int idCompra = rs.getInt("idCompra");
+            int idProducto = rs.getInt("idProducto");
+            
+            DetalleCompra detalleCompra = new DetalleCompra(idDetalle, cantidad, precioCosto, idCompra, idProducto);
+            detallesCompra.add(detalleCompra);
+        }
+        rs.close();
+        ps.close();
+    } catch (SQLException e) {
+        System.out.println("Error al obtener los detalles de compra por proveedor: " + e.getMessage());
     }
+    return detallesCompra;
+}
     
     public List<DetalleCompra> obtenerCompras() {
     List<DetalleCompra> compras = new ArrayList<>();

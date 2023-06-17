@@ -104,10 +104,11 @@ public class ProductoData {
         while (rs.next()) {
             int idProducto = rs.getInt("idProducto");
             String nombreProducto = rs.getString("nombreProducto");
+            String descripcion = rs.getString("descripcion");
             double precioActual = rs.getDouble("precioActual");
             int stock = rs.getInt("stock");
             boolean estado = rs.getBoolean("estado");
-            Producto producto = new Producto(idProducto, nombreProducto, precioActual, stock, estado);
+            Producto producto = new Producto(idProducto, nombreProducto,descripcion, precioActual, stock, estado);
             productos.add(producto);
         }
         rs.close();
@@ -116,6 +117,22 @@ public class ProductoData {
         System.out.println("Error al obtener los productos: " + e.getMessage());
     }
     return productos;
+}
+   public int obtenerUltimoIdProducto() {
+    int ultimoId = 0;
+    String sql = "SELECT idProducto FROM producto ORDER BY idProducto DESC LIMIT 1";
+    try {
+        Statement statement = con.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+        if (rs.next()) {
+            ultimoId = rs.getInt("idProducto");
+        }
+        rs.close();
+        statement.close();
+    } catch (SQLException e) {
+        System.out.println("Error al obtener el último ID de producto: " + e.getMessage());
+    }
+    return ultimoId;
 }
    
 //   public Producto obtenerProductoPorNombre(String nombre) {

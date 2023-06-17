@@ -42,22 +42,22 @@ public class agregarCliente extends javax.swing.JFrame {
         BtnExit = new javax.swing.JPanel();
         BtnExitTxt = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jT_nombreCliente = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jT_apellidoCliente = new javax.swing.JTextField();
-        jT_direccionCliente = new javax.swing.JTextField();
+        jL_idCliente = new javax.swing.JLabel();
         jT_idCliente = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jT_telefonoCliente = new javax.swing.JTextField();
-        jB_EliminarCliente = new javax.swing.JButton();
-        jB_EditarCliente = new javax.swing.JButton();
-        jB_AgregarCliente = new javax.swing.JButton();
         jB_buscarCliente = new javax.swing.JButton();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
+        jS_LineaSeparadora = new javax.swing.JSeparator();
+        jL_nombreCliente = new javax.swing.JLabel();
+        jT_nombreCliente = new javax.swing.JTextField();
+        jL_apellidoCliente = new javax.swing.JLabel();
+        jT_apellidoCliente = new javax.swing.JTextField();
+        jL_direccionCliente = new javax.swing.JLabel();
+        jT_direccionCliente = new javax.swing.JTextField();
+        jL_telefonoCliente = new javax.swing.JLabel();
+        jT_telefonoCliente = new javax.swing.JTextField();
+        jB_AgregarCliente = new javax.swing.JButton();
+        jB_EditarCliente = new javax.swing.JButton();
         jB_Limpiar = new javax.swing.JButton();
+        jB_EliminarCliente = new javax.swing.JButton();
 
         jLabel3.setText("Nombre");
         jLabel3.setMinimumSize(new java.awt.Dimension(50, 16));
@@ -68,7 +68,6 @@ public class agregarCliente extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(800, 500));
         setMinimumSize(new java.awt.Dimension(800, 500));
         setUndecorated(true);
-        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -192,41 +191,62 @@ public class agregarCliente extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("ID Cliente");
-        jLabel2.setPreferredSize(new java.awt.Dimension(50, 15));
+        jL_idCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jL_idCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jL_idCliente.setText("ID Cliente");
+        jL_idCliente.setPreferredSize(new java.awt.Dimension(50, 15));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Apellido");
+        jT_idCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Direccion");
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Telefono");
-
-        jB_EliminarCliente.setBackground(new java.awt.Color(204, 0, 51));
-        jB_EliminarCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jB_EliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
-        jB_EliminarCliente.setText("Eliminar ");
-        jB_EliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jB_EliminarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jB_EliminarClienteMouseClicked(evt);
+        jB_buscarCliente.setBackground(new java.awt.Color(255, 255, 255));
+        jB_buscarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jB_buscarCliente.setForeground(new java.awt.Color(0, 0, 0));
+        jB_buscarCliente.setText("Buscar");
+        jB_buscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jB_buscarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_buscarClienteActionPerformed(evt);
             }
         });
-        jB_EliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+
+        jL_nombreCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jL_nombreCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jL_nombreCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jL_nombreCliente.setText("Nombre");
+
+        jT_nombreCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+
+        jL_apellidoCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jL_apellidoCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jL_apellidoCliente.setText("Apellido");
+
+        jT_apellidoCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+
+        jL_direccionCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jL_direccionCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jL_direccionCliente.setText("Direccion");
+
+        jT_direccionCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+
+        jL_telefonoCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jL_telefonoCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jL_telefonoCliente.setText("Telefono");
+
+        jT_telefonoCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+
+        jB_AgregarCliente.setBackground(new java.awt.Color(255, 255, 255));
+        jB_AgregarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jB_AgregarCliente.setForeground(new java.awt.Color(0, 0, 0));
+        jB_AgregarCliente.setText("Agregar ");
+        jB_AgregarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jB_AgregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_EliminarClienteActionPerformed(evt);
+                jB_AgregarClienteActionPerformed(evt);
             }
         });
 
         jB_EditarCliente.setBackground(new java.awt.Color(255, 255, 255));
-        jB_EditarCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jB_EditarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         jB_EditarCliente.setForeground(new java.awt.Color(0, 0, 0));
         jB_EditarCliente.setText("Editar");
         jB_EditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -241,34 +261,8 @@ public class agregarCliente extends javax.swing.JFrame {
             }
         });
 
-        jB_AgregarCliente.setBackground(new java.awt.Color(255, 255, 255));
-        jB_AgregarCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jB_AgregarCliente.setForeground(new java.awt.Color(0, 0, 0));
-        jB_AgregarCliente.setText("Agregar ");
-        jB_AgregarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jB_AgregarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_AgregarClienteActionPerformed(evt);
-            }
-        });
-
-        jB_buscarCliente.setBackground(new java.awt.Color(255, 255, 255));
-        jB_buscarCliente.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jB_buscarCliente.setForeground(new java.awt.Color(0, 0, 0));
-        jB_buscarCliente.setText("Buscar");
-        jB_buscarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_buscarClienteActionPerformed(evt);
-            }
-        });
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Nombre");
-
         jB_Limpiar.setBackground(new java.awt.Color(255, 255, 255));
-        jB_Limpiar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jB_Limpiar.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
         jB_Limpiar.setForeground(new java.awt.Color(0, 0, 0));
         jB_Limpiar.setText("Limpiar");
         jB_Limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -278,11 +272,27 @@ public class agregarCliente extends javax.swing.JFrame {
             }
         });
 
+        jB_EliminarCliente.setBackground(new java.awt.Color(204, 0, 51));
+        jB_EliminarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jB_EliminarCliente.setForeground(new java.awt.Color(255, 255, 255));
+        jB_EliminarCliente.setText("Eliminar ");
+        jB_EliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jB_EliminarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_EliminarClienteMouseClicked(evt);
+            }
+        });
+        jB_EliminarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_EliminarClienteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jS_LineaSeparadora, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -290,10 +300,10 @@ public class agregarCliente extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel7))
+                                    .addComponent(jL_direccionCliente)
+                                    .addComponent(jL_telefonoCliente)
+                                    .addComponent(jL_apellidoCliente)
+                                    .addComponent(jL_nombreCliente))
                                 .addGap(55, 55, 55)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jT_direccionCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
@@ -303,7 +313,7 @@ public class agregarCliente extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jB_AgregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jL_idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
@@ -312,8 +322,8 @@ public class agregarCliente extends javax.swing.JFrame {
                                         .addComponent(jB_Limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(8, 8, 8))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(jT_idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(9, 9, 9)
+                                        .addComponent(jT_idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jB_buscarCliente)
                                         .addGap(0, 0, Short.MAX_VALUE))))))
@@ -332,26 +342,26 @@ public class agregarCliente extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_buscarCliente)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jL_idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jT_idCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jS_LineaSeparadora, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jT_nombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
+                    .addComponent(jL_nombreCliente))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
+                    .addComponent(jL_apellidoCliente)
                     .addComponent(jT_apellidoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
+                    .addComponent(jL_direccionCliente)
                     .addComponent(jT_direccionCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jT_telefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(jL_telefonoCliente))
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_EditarCliente)
@@ -562,16 +572,16 @@ public class agregarCliente extends javax.swing.JFrame {
     private javax.swing.JButton jB_EliminarCliente;
     private javax.swing.JButton jB_Limpiar;
     private javax.swing.JButton jB_buscarCliente;
+    private javax.swing.JLabel jL_apellidoCliente;
+    private javax.swing.JLabel jL_direccionCliente;
+    private javax.swing.JLabel jL_idCliente;
+    private javax.swing.JLabel jL_nombreCliente;
+    private javax.swing.JLabel jL_telefonoCliente;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jP_header;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jS_LineaSeparadora;
     private javax.swing.JTextField jT_apellidoCliente;
     private javax.swing.JTextField jT_direccionCliente;
     private javax.swing.JTextField jT_idCliente;
