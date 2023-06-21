@@ -9,6 +9,7 @@ package Modelo;
  * @author Hugo
  */
 public class Cliente {
+
     private int idCliente;
     private String apellido;
     private String nombre;
@@ -30,9 +31,6 @@ public class Cliente {
         this.apellido = apellido;
         this.nombre = nombre;
     }
-
-    
-    
 
     public Cliente(int idCliente, String apellido, String nombre, String domicilio, String telefono) {
         this.idCliente = idCliente;
@@ -84,8 +82,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return  idCliente + ", " + apellido + ", " + nombre  ;
+        return idCliente + ", " + apellido + ", " + nombre;
     }
-    
-    
+
 }

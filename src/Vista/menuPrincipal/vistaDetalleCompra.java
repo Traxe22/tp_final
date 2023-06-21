@@ -105,7 +105,7 @@ public class vistaDetalleCompra extends javax.swing.JFrame {
         JL_Titulo = new javax.swing.JLabel();
         JL_Titulo2 = new javax.swing.JLabel();
         jC_listaProveedores = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jS_tablaHistorialDeCompras = new javax.swing.JScrollPane();
         jT_tabla_historialDeCompras = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -261,7 +261,8 @@ public class vistaDetalleCompra extends javax.swing.JFrame {
         ));
         jT_tabla_historialDeCompras.setGridColor(new java.awt.Color(51, 51, 51));
         jT_tabla_historialDeCompras.setPreferredSize(new java.awt.Dimension(800, 275));
-        jScrollPane1.setViewportView(jT_tabla_historialDeCompras);
+        jT_tabla_historialDeCompras.setSelectionBackground(new java.awt.Color(204, 0, 204));
+        jS_tablaHistorialDeCompras.setViewportView(jT_tabla_historialDeCompras);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -277,20 +278,20 @@ public class vistaDetalleCompra extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jP_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jScrollPane1)
+            .addComponent(jS_tablaHistorialDeCompras)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jP_header, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(JL_Titulo)
                 .addGap(24, 24, 24)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jC_listaProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JL_Titulo2))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jS_tablaHistorialDeCompras, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(63, 63, 63))
         );
 
@@ -395,7 +396,7 @@ public class vistaDetalleCompra extends javax.swing.JFrame {
     private javax.swing.JComboBox<Proveedor> jC_listaProveedores;
     private javax.swing.JPanel jP_header;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jS_tablaHistorialDeCompras;
     private javax.swing.JTable jT_tabla_historialDeCompras;
     // End of variables declaration//GEN-END:variables
 }

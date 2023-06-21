@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package Vista.menuPrincipal;
 
 import Control.ProductoData;
@@ -14,22 +10,18 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Hugo
+ * @author Hugo, APOLO
  */
 public class vistaInventario extends javax.swing.JFrame {
 
     private ProductoData prodData = new ProductoData();
     private DefaultTableModel modelo = new DefaultTableModel();
 
-    /**
-     * Creates new form vistaInventario
-     */
     int xMouse, yMouse;
 
     public vistaInventario() {
         initComponents();
         armarCabecera();
-
         llenarTabla();
     }
 
@@ -48,8 +40,9 @@ public class vistaInventario extends javax.swing.JFrame {
         BtnExitTxt = new javax.swing.JLabel();
         JL_LOGO = new javax.swing.JLabel();
         JL_Titulo = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jT_tablaProducto = new javax.swing.JTable();
+        jS_tablaProductos = new javax.swing.JScrollPane();
+        jT_tablaProductos = new javax.swing.JTable();
+        jB_VerificarStock = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -122,8 +115,8 @@ public class vistaInventario extends javax.swing.JFrame {
 
         BtnExitTxt.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         BtnExitTxt.setForeground(new java.awt.Color(255, 255, 255));
-        BtnExitTxt.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        BtnExitTxt.setText("X");
+        BtnExitTxt.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        BtnExitTxt.setText("       x");
         BtnExitTxt.setMaximumSize(new java.awt.Dimension(70, 70));
         BtnExitTxt.setMinimumSize(new java.awt.Dimension(70, 70));
         BtnExitTxt.setPreferredSize(new java.awt.Dimension(70, 70));
@@ -151,9 +144,8 @@ public class vistaInventario extends javax.swing.JFrame {
         BtnExitLayout.setVerticalGroup(
             BtnExitLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(BtnExitLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(BtnExitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         JL_LOGO.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vista/imagenes/LOGOCHIQUITO.png"))); // NOI18N
@@ -185,9 +177,9 @@ public class vistaInventario extends javax.swing.JFrame {
         JL_Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JL_Titulo.setText("INVENTARIO");
 
-        jT_tablaProducto.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
-        jT_tablaProducto.setForeground(new java.awt.Color(0, 0, 0));
-        jT_tablaProducto.setModel(new javax.swing.table.DefaultTableModel(
+        jT_tablaProductos.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+        jT_tablaProductos.setForeground(new java.awt.Color(0, 0, 0));
+        jT_tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -199,9 +191,21 @@ public class vistaInventario extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
-        jT_tablaProducto.setGridColor(new java.awt.Color(51, 51, 51));
-        jT_tablaProducto.setPreferredSize(new java.awt.Dimension(800, 275));
-        jScrollPane1.setViewportView(jT_tablaProducto);
+        jT_tablaProductos.setGridColor(new java.awt.Color(51, 51, 51));
+        jT_tablaProductos.setPreferredSize(new java.awt.Dimension(800, 275));
+        jT_tablaProductos.setSelectionBackground(new java.awt.Color(204, 0, 204));
+        jS_tablaProductos.setViewportView(jT_tablaProductos);
+
+        jB_VerificarStock.setBackground(new java.awt.Color(255, 255, 255));
+        jB_VerificarStock.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jB_VerificarStock.setForeground(new java.awt.Color(0, 0, 0));
+        jB_VerificarStock.setText("VERIFICAR STOCK");
+        jB_VerificarStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jB_VerificarStock.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_VerificarStockActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -212,19 +216,25 @@ public class vistaInventario extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jP_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1)
-                    .addComponent(JL_Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(JL_Titulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jS_tablaProductos))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(319, 319, 319)
+                .addComponent(jB_VerificarStock)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jP_header, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jP_header, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(JL_Titulo)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addComponent(jS_tablaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28)
+                .addComponent(jB_VerificarStock)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -249,6 +259,7 @@ public class vistaInventario extends javax.swing.JFrame {
         log.setVisible(true);
     }//GEN-LAST:event_HomeBtnTxtMouseClicked
 
+    // Colores hover header ( < )
     private void HomeBtnTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeBtnTxtMouseEntered
         HomeBtn.setBackground(Color.MAGENTA);
     }//GEN-LAST:event_HomeBtnTxtMouseEntered
@@ -257,6 +268,7 @@ public class vistaInventario extends javax.swing.JFrame {
         HomeBtn.setBackground(new Color(51, 51, 51));
     }//GEN-LAST:event_HomeBtnTxtMouseExited
 
+    // Confirmar cierre ( X )
     private void BtnExitTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnExitTxtMouseClicked
         int option = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que queres cerrar el programa?", "Confirmar cierre", JOptionPane.YES_NO_OPTION);
         if (option == JOptionPane.YES_OPTION) {
@@ -264,6 +276,7 @@ public class vistaInventario extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnExitTxtMouseClicked
 
+    // Colores hover header ( X )
     private void BtnExitTxtMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnExitTxtMouseEntered
         BtnExit.setBackground(Color.RED);
     }//GEN-LAST:event_BtnExitTxtMouseEntered
@@ -272,6 +285,7 @@ public class vistaInventario extends javax.swing.JFrame {
         BtnExit.setBackground(new Color(51, 51, 51));
     }//GEN-LAST:event_BtnExitTxtMouseExited
 
+    // Para draggear el programa
     private void jP_headerMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jP_headerMouseDragged
         //Esto hace que se pueda draggear el programa
         int x = evt.getXOnScreen();
@@ -283,6 +297,39 @@ public class vistaInventario extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jP_headerMousePressed
+
+    //Boton stock
+    private void jB_VerificarStockActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_VerificarStockActionPerformed
+        String nombreProducto = JOptionPane.showInputDialog(this, "Ingrese el nombre del producto:");
+
+        if (nombreProducto != null && !nombreProducto.isEmpty()) {
+            ProductoData productoData = new ProductoData();
+            List<Producto> productosEncontrados = productoData.buscarProductoPorNombre(nombreProducto);
+
+            if (productosEncontrados.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "No se encontraron productos con ese nombre.");
+            } else {
+                StringBuilder mensaje = new StringBuilder();
+                for (Producto producto : productosEncontrados) {
+                    int idProducto = producto.getIdProducto();
+                    int cantidadDeseada = obtenerCantidadDeseada();
+                    boolean stockSuficiente = productoData.verificarStockSuficiente(idProducto, cantidadDeseada);
+                    String estadoStock = stockSuficiente ? "Hay stock para la cantidad deseada" : "No hay stock para la cantidad deseada";
+
+                    mensaje.append("Nombre: ").append(producto.getNombreProducto()).append("\n");
+                    mensaje.append("Descripción: ").append(producto.getDescripcion()).append("\n");
+                    mensaje.append("Precio: ").append(producto.getPrecioActual()).append("\n");
+                    mensaje.append("Stock Disponible: ").append(producto.getStock()).append("\n");
+                    mensaje.append("-----------------------------------------").append("\n");
+                    mensaje.append("").append(estadoStock).append("\n\n");
+                }
+                JOptionPane.showMessageDialog(this, mensaje.toString());
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Debe ingresar un nombre de producto.");
+        }
+
+    }//GEN-LAST:event_jB_VerificarStockActionPerformed
 
     /**
      * @param args the command line arguments
@@ -326,12 +373,14 @@ public class vistaInventario extends javax.swing.JFrame {
     private javax.swing.JLabel HomeBtnTxt;
     private javax.swing.JLabel JL_LOGO;
     private javax.swing.JLabel JL_Titulo;
+    private javax.swing.JButton jB_VerificarStock;
     private javax.swing.JPanel jP_header;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jT_tablaProducto;
+    private javax.swing.JScrollPane jS_tablaProductos;
+    private javax.swing.JTable jT_tablaProductos;
     // End of variables declaration//GEN-END:variables
 
+    //Tabla Inventario
     private void armarCabecera() {
         ArrayList titulos = new ArrayList();
         titulos.add("Nombre ");
@@ -353,7 +402,7 @@ public class vistaInventario extends javax.swing.JFrame {
         };
         for (Object titulo : titulos) {
             modelo.addColumn(titulo);
-            jT_tablaProducto.setModel(modelo);
+            jT_tablaProductos.setModel(modelo);
         }
     }
 
@@ -370,4 +419,16 @@ public class vistaInventario extends javax.swing.JFrame {
             });
         }
     }
+
+    private int obtenerCantidadDeseada() {
+        int cantidadDeseada = 0;
+        String cantidadText = JOptionPane.showInputDialog(this, "Ingresa la cantidad deseada:", "VERIFICAR STOCK", JOptionPane.PLAIN_MESSAGE);
+        try {
+            cantidadDeseada = Integer.parseInt(cantidadText);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingresa una cantidad válida.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return cantidadDeseada;
+    }
+
 }

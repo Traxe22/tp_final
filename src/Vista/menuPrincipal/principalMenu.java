@@ -275,30 +275,27 @@ public class principalMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Botones Menu Principal
     private void BtnClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnClienteActionPerformed
-        // TODO add your handling code here:
         dispose();
-        agregarCliente agg = new agregarCliente();
+        vistaCliente agg = new vistaCliente();
         agg.setVisible(true);
 
     }//GEN-LAST:event_BtnClienteActionPerformed
 
     private void BtnProovedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnProovedoresActionPerformed
-        // TODO add your handling code here:
         dispose();
         vistaProveedor pro = new vistaProveedor();
         pro.setVisible(true);
     }//GEN-LAST:event_BtnProovedoresActionPerformed
 
     private void BtnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInventarioActionPerformed
-        // TODO add your handling code here:
         dispose();
         vistaInventario inven = new vistaInventario();
         inven.setVisible(true);
     }//GEN-LAST:event_BtnInventarioActionPerformed
 
     private void BtnCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCompraActionPerformed
-        // TODO add your handling code here:
         dispose();
         vistaCompra comp = new vistaCompra();
         comp.setVisible(true);
@@ -311,6 +308,7 @@ public class principalMenu extends javax.swing.JFrame {
         venta.setVisible(true);
     }//GEN-LAST:event_BtnVentaActionPerformed
 
+    // Cabecera y eventos para draggear y cerrar el programa
     private void jP_headerMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jP_headerMousePressed
         xMouse = evt.getX();
         yMouse = evt.getY();
@@ -334,6 +332,7 @@ public class principalMenu extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_BtnExitTxtMouseClicked
 
+    // Colores Hover
     private void BtnExitTxtMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnExitTxtMouseExited
         BtnExit.setBackground(new Color(51, 51, 51));
     }//GEN-LAST:event_BtnExitTxtMouseExited
@@ -356,14 +355,14 @@ public class principalMenu extends javax.swing.JFrame {
         BtnCliente.setForeground(Color.BLACK);
     }//GEN-LAST:event_BtnClienteMouseExited
 
-    // Volver al Login
+    // Boton volver al Login
     private void HomeBtnTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeBtnTxtMouseClicked
         dispose();
         login login = new login();
         login.setVisible(true);
     }//GEN-LAST:event_HomeBtnTxtMouseClicked
 
-    //Botones Hover
+    //Colores Hover
     private void BtnProovedoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BtnProovedoresMouseEntered
         BtnProovedores.setBackground(Color.MAGENTA);
         BtnProovedores.setForeground(Color.WHITE);

@@ -5,58 +5,54 @@
 package Control;
 
 import Conexion.Conexion;
-import Modelo.Cliente;
-import Modelo.Producto;
 import Modelo.Venta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author Hugo
  */
 public class VentaData {
+
     private Connection con = null;
-    public VentaData(){
+
+    public VentaData() {
         con = Conexion.getConnection();
     }
+
     public void registrarVenta(Venta venta) {
         String sql = "INSERT INTO venta(fecha, idCliente) VALUES (?, ?)";
-    try {
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setDate(1, java.sql.Date.valueOf(venta.getFechaVenta()));
-        ps.setInt(2, venta.getIdCliente());
-        
-        ps.executeUpdate();
-        
-        ps.close();
-        System.out.println("Venta registrada correctamente.");
-    } catch (SQLException e) {
-        System.out.println("No se pudo registrar la venta correctamente: " + e.getMessage());
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setDate(1, java.sql.Date.valueOf(venta.getFechaVenta()));
+            ps.setInt(2, venta.getIdCliente());
+
+            ps.executeUpdate();
+
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println("No se pudo registrar la venta correctamente: " + e.getMessage());
+        }
     }
 
-    }
     public int obtenerUltimoIddeVenta() {
-    int ultimoId = 0;
-    String sql = "SELECT idVenta FROM venta ORDER BY idVenta DESC LIMIT 1";
-    try {
-        Statement statement = con.createStatement();
-        ResultSet rs = statement.executeQuery(sql);
-        if (rs.next()) {
-            ultimoId = rs.getInt("idVenta");
+        int ultimoId = 0;
+        String sql = "SELECT idVenta FROM venta ORDER BY idVenta DESC LIMIT 1";
+        try {
+            Statement statement = con.createStatement();
+            ResultSet rs = statement.executeQuery(sql);
+            if (rs.next()) {
+                ultimoId = rs.getInt("idVenta");
+            }
+            rs.close();
+            statement.close();
+        } catch (SQLException e) {
+            System.out.println("Error al obtener el último ID de venta: " + e.getMessage());
         }
-        rs.close();
-        statement.close();
-    } catch (SQLException e) {
-        System.out.println("Error al obtener el último ID de venta: " + e.getMessage());
+        return ultimoId;
     }
-    return ultimoId;
 }
-    }
-    

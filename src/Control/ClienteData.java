@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Control;
 
 import Conexion.Conexion;
@@ -17,17 +13,20 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Hugo
+ * @author Hugo, APOLO
  */
 public class ClienteData {
+
     private Connection con = null;
-    public ClienteData(){
+
+    public ClienteData() {
         con = Conexion.getConnection();
     }
-    public void agregarCliente(Cliente cliente){
+
+    public void agregarCliente(Cliente cliente) {
         String sql = "INSERT INTO cliente(apellido,nombre, domicilio, telefono) VALUES (?,?,?,?)";
         try {
-            PreparedStatement ps = con.prepareStatement(sql);
+            PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, cliente.getApellido());
             ps.setString(2, cliente.getNombre());
             ps.setString(3, cliente.getDomicilio());
@@ -36,15 +35,23 @@ public class ClienteData {
             // Ejecuta la consulta
             ps.executeUpdate();
 
-            // Cierra el statement
+            // Obtiene el ID asignado al cliente
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                int idAsignado = rs.getInt(1);
+                // Actualiza el ID del cliente en el objeto Cliente
+                cliente.setIdCliente(idAsignado);
+            }
+
+            // Cierra el statement y el ResultSet
+            rs.close();
             ps.close();
-            JOptionPane.showMessageDialog(null, "Cliente agregado correctamente a la base de datos.");
-            
+
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, "Error al agregar al cliente a la base de datos."+e.getMessage());
-            //System.out.println("Error al agregar el cliente a la base de datos: " + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error al agregar al cliente a la base de datos." + e.getMessage());
         }
     }
+
     public void modificarCliente(Cliente cliente) {
         String sql = "UPDATE cliente SET apellido=?, nombre=?, domicilio=?, telefono=? WHERE idCliente=?";
         try {
@@ -66,7 +73,8 @@ public class ClienteData {
             System.out.println("Error al modificar el cliente en la base de datos: " + e.getMessage());
         }
     }
-     public void eliminarCliente(int idCliente) {
+
+    public void eliminarCliente(int idCliente) {
         String sql = "DELETE FROM cliente WHERE idCliente=?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -83,7 +91,8 @@ public class ClienteData {
             System.out.println("Error al eliminar el cliente de la base de datos: " + e.getMessage());
         }
     }
-     public Cliente buscarClientePorId(int idCliente) {
+
+    public Cliente buscarClientePorId(int idCliente) {
         String sql = "SELECT idCliente, apellido, nombre, domicilio, telefono FROM cliente WHERE idCliente = ?";
         Cliente cliente = null;
 
@@ -110,10 +119,10 @@ public class ClienteData {
 
         return cliente;
     }
-     
-     public List<Cliente> obtenerClientes() {
+
+    public List<Cliente> obtenerClientes() {
         List<Cliente> clientes = new ArrayList<>();
-        String sql = "SELECT idCliente, nombre, apellido FROM cliente";
+        String sql = "SELECT idCliente, nombre, apellido, domicilio, telefono FROM cliente";
         try {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sql);
@@ -121,7 +130,9 @@ public class ClienteData {
                 int id = rs.getInt("idCliente");
                 String nombre = rs.getString("nombre");
                 String apellido = rs.getString("apellido");
-                Cliente cliente = new Cliente(id, nombre, apellido);
+                String domicilio = rs.getString("domicilio");
+                String telefono = rs.getString("telefono");
+                Cliente cliente = new Cliente(id, apellido, nombre, domicilio, telefono);
                 clientes.add(cliente);
             }
             rs.close();
@@ -130,6 +141,5 @@ public class ClienteData {
             System.out.println("Error al obtener los clientes: " + e.getMessage());
         }
         return clientes;
-}
-    
+    }
 }

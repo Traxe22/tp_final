@@ -5,8 +5,6 @@
 package Vista.login;
 
 import java.awt.Color;
-//import static javafx.scene.paint.Color.color;
-import org.xml.sax.Attributes;
 import Vista.menuPrincipal.principalMenu;
 import javax.swing.JOptionPane;
 
@@ -38,16 +36,22 @@ public class login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(800, 500));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         background.setBackground(new java.awt.Color(51, 51, 51));
+        background.setMaximumSize(new java.awt.Dimension(800, 500));
         background.setMinimumSize(new java.awt.Dimension(800, 500));
-        background.setPreferredSize(new java.awt.Dimension(810, 500));
+        background.setPreferredSize(new java.awt.Dimension(800, 500));
         background.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jB_acceder.setBackground(new java.awt.Color(255, 255, 255));
         jB_acceder.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+        jB_acceder.setForeground(new java.awt.Color(0, 0, 0));
         jB_acceder.setText("ACCEDER");
         jB_acceder.setToolTipText("");
         jB_acceder.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -113,8 +117,9 @@ public class login extends javax.swing.JFrame {
         exitBtnLayout.setHorizontalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, exitBtnLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jL_exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jL_exitTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         exitBtnLayout.setVerticalGroup(
             exitBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -128,7 +133,7 @@ public class login extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 745, Short.MAX_VALUE)
+                .addGap(0, 710, Short.MAX_VALUE)
                 .addComponent(exitBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -140,7 +145,7 @@ public class login extends javax.swing.JFrame {
 
         background.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 50));
 
-        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
