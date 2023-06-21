@@ -96,6 +96,7 @@ public class vistaVenta extends javax.swing.JFrame {
         jB_HistorialDeVentas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 800));
         setMinimumSize(new java.awt.Dimension(800, 800));
         setUndecorated(true);
         setResizable(false);
@@ -205,7 +206,7 @@ public class vistaVenta extends javax.swing.JFrame {
             jP_headerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jP_headerLayout.createSequentialGroup()
                 .addComponent(HomeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 211, Short.MAX_VALUE)
                 .addComponent(JL_LOGO, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(212, 212, 212)
                 .addComponent(BtnExit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -305,6 +306,11 @@ public class vistaVenta extends javax.swing.JFrame {
 
         jT_CantidadDeVenta.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
         jT_CantidadDeVenta.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jT_CantidadDeVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jT_CantidadDeVentaActionPerformed(evt);
+            }
+        });
 
         jL_PrecioVenta.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
         jL_PrecioVenta.setForeground(new java.awt.Color(255, 255, 255));
@@ -442,6 +448,14 @@ public class vistaVenta extends javax.swing.JFrame {
                         .addComponent(jB_AgregarDetallesVenta)))
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(140, 140, 140)
+                                .addComponent(jB_HistorialDeVentas))
+                            .addComponent(jS_tablaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jL_ultimoProductoID)
@@ -456,15 +470,7 @@ public class vistaVenta extends javax.swing.JFrame {
                         .addGap(172, 172, 172))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jS_mostrarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(49, 49, 49))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jS_tablaProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jB_HistorialDeVentas)
-                                .addGap(10, 10, 10)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(49, 49, 49))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -476,7 +482,7 @@ public class vistaVenta extends javax.swing.JFrame {
                 .addComponent(jS_LineaSeparadora, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jL_tituloTablaClientes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -526,7 +532,7 @@ public class vistaVenta extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jL_ultimoProductoID)
                     .addComponent(jT_MostrarIdProducto_vender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jB_HistorialDeVentas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jB_Vender)
@@ -598,18 +604,26 @@ public class vistaVenta extends javax.swing.JFrame {
             int idProducto = Integer.parseInt(jT_IDProducto.getText());
             int cantidad = Integer.parseInt(jT_CantidadDeVenta.getText());
 
+            // Verificar si la cantidad es negativa
+            if (cantidad < 0) {
+                JOptionPane.showMessageDialog(this, "La cantidad no puede ser negativa. Por favor, ingresa un número positivo.");
+                jT_CantidadDeVenta.setText(""); // Limpiar el campo de texto
+                jB_AgregarDetallesVenta.setEnabled(false); // Deshabilitar el botón "AgregarDetallesVenta"
+                return; // Terminar la ejecución del método
+            }
+
             boolean stockSuficiente = proData.verificarStockSuficiente(idProducto, cantidad);
             if (stockSuficiente) {
                 proData.restarStock(idProducto, cantidad);
                 llenarCabeceraProductos();
                 jT_MostrarIdProducto_vender.setText(String.valueOf(idProducto));
 
-                // Esto habilita el boton "AgregarDetallesVenta" si hay suficiente stock
+                // Esto habilita el botón "AgregarDetallesVenta" si hay suficiente stock
                 jB_AgregarDetallesVenta.setEnabled(true);
             } else {
                 mostrarAlerta("No hay stock del producto.");
 
-                // Esto deshabilita el boton "AgregarDetallesVenta" si no hay suficiente stock
+                // Esto deshabilita el botón "AgregarDetallesVenta" si no hay suficiente stock
                 jB_AgregarDetallesVenta.setEnabled(false);
             }
         } catch (Exception ex) {
@@ -618,12 +632,17 @@ public class vistaVenta extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_VenderActionPerformed
 
     private void jB_AgregarDetallesVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_AgregarDetallesVentaActionPerformed
-        // TODO add your handling code here:
         try {
             llenarTablaIdVenta();
             int cantidad = Integer.parseInt(jT_CantidadDeVenta.getText());
             double precio = Double.parseDouble(jT_MostrarPrecioProducto.getText());
             int idpro = Integer.parseInt(jT_IDProducto.getText());
+
+            if (cantidad < 0) {
+                JOptionPane.showMessageDialog(this, "La cantidad no puede ser negativa. Por favor, ingresa un número positivo.");
+                return; // Evitar agregar el detalle de venta
+            }
+
             DetalleVenta ventaDetalle = new DetalleVenta(cantidad, idVenta, precio, idpro);
             DetalleVentaData ventaDetalleda = new DetalleVentaData();
             ventaDetalleda.agregarDetalleVenta(ventaDetalle);
@@ -678,6 +697,30 @@ public class vistaVenta extends javax.swing.JFrame {
         xMouse = evt.getX();
         yMouse = evt.getY();
     }//GEN-LAST:event_jP_headerMousePressed
+
+    private void jT_CantidadDeVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_CantidadDeVentaActionPerformed
+        String input = jT_CantidadDeVenta.getText();
+        int cantidad = 0;
+
+        try {
+            cantidad = Integer.parseInt(input);
+
+            if (cantidad < 0) {
+                JOptionPane.showMessageDialog(this, "La cantidad no puede ser negativa. Por favor, ingresa un número positivo.");
+                jT_CantidadDeVenta.setText(""); // Limpiar el campo de texto
+                jB_AgregarDetallesVenta.setEnabled(false); // Deshabilitar el botón "AgregarDetallesVenta"
+            } else {
+                jB_AgregarDetallesVenta.setEnabled(true); // Habilitar el botón "AgregarDetallesVenta"
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingresa un número válido para la cantidad.");
+            jT_CantidadDeVenta.setText(""); // Limpiar el campo de texto
+            jB_AgregarDetallesVenta.setEnabled(false); // Deshabilitar el botón "AgregarDetallesVenta"
+
+            // Aquí deshabilitamos el botón al producirse el primer error
+            jB_AgregarDetallesVenta.setEnabled(false);
+        }
+    }//GEN-LAST:event_jT_CantidadDeVentaActionPerformed
 
     /**
      * @param args the command line arguments

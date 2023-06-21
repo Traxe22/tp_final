@@ -194,6 +194,30 @@ public class ProductoData {
         }
         return producto;
     }
+    
+    public Producto buscarProductoPorId2(int idProducto) {
+        Producto producto = null;
+        String sql = "SELECT * FROM producto WHERE idProducto = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, idProducto);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                int id = rs.getInt("idProducto");
+                String nombre = rs.getString("nombreProducto");
+                String descrip = rs.getString("descripcion");
+                double precio = rs.getDouble("precioActual");
+                int stock = rs.getInt("stock");
+                boolean estado = rs.getBoolean("estado");
+                producto = new Producto(idProducto, nombre, descrip, precio, stock, estado);
+            }
+            rs.close();
+            ps.close();
+        } catch (SQLException e) {
+            System.out.println("Error al buscar el producto: " + e.getMessage());
+        }
+        return producto;
+    }
 
     public List<Producto> buscarProductoPorNombre(String nombreProducto) {
         List<Producto> productos = new ArrayList<>();
@@ -237,6 +261,27 @@ public class ProductoData {
             System.out.println("Error al actualizar el producto en la base de datos: " + e.getMessage());
         }
     }
+    public void actualizarProducto2(Producto producto) {
+        String sql = "UPDATE producto SET nombreProducto = ?, descripcion = ?, precioActual = ?,stock = ?,estado = ? WHERE idProducto = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, producto.getNombreProducto());
+            ps.setString(2, producto.getDescripcion());
+            ps.setDouble(3, producto.getPrecioActual());
+            ps.setInt(4, producto.getStock());
+            ps.setBoolean(5, producto.isEstado());
+            ps.setInt(6, producto.getIdProducto());
+
+            ps.executeUpdate();
+
+            ps.close();
+            System.out.println("Producto actualizado correctamente en la base de datos.");
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar el producto en la base de datos: " + e.getMessage());
+        }
+    }
+    
+    
 
     public void eliminarProducto(int idProducto) {
         String sql = "DELETE FROM producto WHERE idProducto = ?";

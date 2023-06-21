@@ -237,7 +237,9 @@ public class vistaCompra extends javax.swing.JFrame {
 
         jT_idProveedor_Compra.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
 
+        jB_buscarProveedor_compra.setBackground(new java.awt.Color(255, 255, 255));
         jB_buscarProveedor_compra.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+        jB_buscarProveedor_compra.setForeground(new java.awt.Color(0, 0, 0));
         jB_buscarProveedor_compra.setText("BUSCAR");
         jB_buscarProveedor_compra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_buscarProveedor_compra.addActionListener(new java.awt.event.ActionListener() {
@@ -293,6 +295,11 @@ public class vistaCompra extends javax.swing.JFrame {
         jL_PrecioCosto.setText("PRECIO COSTO");
 
         jT_precioCosto_DetalleCompra.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+        jT_precioCosto_DetalleCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jT_precioCosto_DetalleCompraActionPerformed(evt);
+            }
+        });
 
         jL_Descripcion.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
         jL_Descripcion.setForeground(new java.awt.Color(255, 255, 255));
@@ -351,7 +358,9 @@ public class vistaCompra extends javax.swing.JFrame {
         jT_idProdcuto_mostrar.setSelectionBackground(new java.awt.Color(204, 0, 204));
         jScrollPane3.setViewportView(jT_idProdcuto_mostrar);
 
+        jB_compra.setBackground(new java.awt.Color(255, 255, 255));
         jB_compra.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+        jB_compra.setForeground(new java.awt.Color(0, 0, 0));
         jB_compra.setText("COMPRAR");
         jB_compra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_compra.addActionListener(new java.awt.event.ActionListener() {
@@ -360,7 +369,9 @@ public class vistaCompra extends javax.swing.JFrame {
             }
         });
 
+        jB_guardarDetalle.setBackground(new java.awt.Color(255, 255, 255));
         jB_guardarDetalle.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
+        jB_guardarDetalle.setForeground(new java.awt.Color(0, 0, 0));
         jB_guardarDetalle.setText("GUARDAR DETALLES");
         jB_guardarDetalle.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_guardarDetalle.addActionListener(new java.awt.event.ActionListener() {
@@ -390,44 +401,6 @@ public class vistaCompra extends javax.swing.JFrame {
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jB_compra)
-                                .addGap(18, 18, 18)
-                                .addComponent(jB_guardarDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(170, 170, 170)
-                                .addComponent(jB_historialCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jT_precioCosto_DetalleCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jL_PrecioCosto))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jL_Descripcion)
-                                            .addComponent(jT_descripcion_DetalleCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jL_FechaDeCompra)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jT_nombreProducto_DetalleCompra)
-                                            .addComponent(jL_NombreDelProducto))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jT_cantidad_DetalleCompra)
-                                            .addComponent(jL_Cantidad)))
-                                    .addComponent(jC_FechaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(273, 273, 273)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jL_IdProductoTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jL_IdCompraTabla, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(0, 0, Short.MAX_VALUE)))))
-                        .addGap(63, 63, 63))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(61, 61, 61)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jL_IDProveedor)
@@ -436,12 +409,55 @@ public class vistaCompra extends javax.swing.JFrame {
                             .addComponent(jB_buscarProveedor_compra))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(68, 68, 68))
+                        .addGap(24, 24, 24))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jL_DetalleDeCompra)
+                        .addComponent(jL_DetalleDeCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jL_CargarDetalle)
-                        .addGap(92, 92, 92))))
+                        .addComponent(jL_CargarDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jT_precioCosto_DetalleCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jL_PrecioCosto))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jT_descripcion_DetalleCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                                .addComponent(jL_Descripcion)
+                                                .addGap(70, 70, 70))))
+                                    .addComponent(jL_FechaDeCompra)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jT_nombreProducto_DetalleCompra)
+                                            .addComponent(jL_NombreDelProducto))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(jT_cantidad_DetalleCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
+                                            .addComponent(jL_Cantidad))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(293, 293, 293)
+                                        .addComponent(jL_IdProductoTabla, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jL_IdCompraTabla, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jC_FechaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jB_compra)
+                                .addGap(18, 18, 18)
+                                .addComponent(jB_guardarDetalle, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(170, 170, 170)
+                                .addComponent(jB_historialCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(63, 63, 63))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jP_header, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -465,27 +481,27 @@ public class vistaCompra extends javax.swing.JFrame {
                         .addComponent(jT_idProveedor_Compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jB_buscarProveedor_compra)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                         .addComponent(jT_mostrarProveedor_compra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(40, 40, 40)
                 .addComponent(jS_LineaSeparadora2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
+                .addGap(20, 20, 20)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
+                        .addGap(3, 3, 3)
+                        .addComponent(jL_CargarDetalle)
+                        .addGap(18, 18, 18)
                         .addComponent(jL_IdCompraTabla)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jL_IdProductoTabla)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jL_DetalleDeCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jL_CargarDetalle))
+                        .addComponent(jL_DetalleDeCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -512,7 +528,7 @@ public class vistaCompra extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(113, 113, 113)
                                 .addComponent(jC_FechaCompra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jB_historialCompra, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jB_compra)
@@ -524,9 +540,7 @@ public class vistaCompra extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 810, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -563,13 +577,21 @@ public class vistaCompra extends javax.swing.JFrame {
             actualizarIdTodo();
             int cantidad = Integer.parseInt(jT_cantidad_DetalleCompra.getText());
             double precio = Double.parseDouble(jT_precioCosto_DetalleCompra.getText());
+
+            if (cantidad < 0) {
+                JOptionPane.showMessageDialog(this, "La cantidad no puede ser negativa. Por favor, ingresa un número positivo.");
+                jT_cantidad_DetalleCompra.setText(""); // Limpiar el campo de texto
+                jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón
+                return; // Detener la ejecución del método
+            }
+
             DetalleCompra dcompra = new DetalleCompra(cantidad, precio, idCompra, idProducto);
             detalleData.agregarDetalleCompra(dcompra);
             JOptionPane.showMessageDialog(this, "Detalle Guardado correctamente.");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Error al guardar Detalle" + ex.getMessage());
+            jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón
         }
-
     }//GEN-LAST:event_jB_guardarDetalleActionPerformed
 
     private void HomeBtnTxtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeBtnTxtMouseClicked
@@ -615,7 +637,7 @@ public class vistaCompra extends javax.swing.JFrame {
 
     private void jB_compraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_compraActionPerformed
         try {
-            //Registrando Compra..
+            // Registrando Compra..
             int idProveedor = Integer.parseInt(jT_idProveedor_Compra.getText());
             SimpleDateFormat ff = new SimpleDateFormat("dd/MM/yyyy");
             ff.format(jC_FechaCompra.getCalendar().getTime());
@@ -624,20 +646,30 @@ public class vistaCompra extends javax.swing.JFrame {
             comData.registrarCompra(comp);
             llenarIdCompra();
 
-            try {
-                //COMPRANDO PRODUCTO..
-                String nom = jT_nombreProducto_DetalleCompra.getText();
-                int cantidad = Integer.parseInt(jT_cantidad_DetalleCompra.getText());
-                Double precio = Double.parseDouble(jT_precioCosto_DetalleCompra.getText());
-                String descrip = jT_descripcion_DetalleCompra.getText();
-                Producto prod = new Producto(nom, descrip, precio, cantidad, true);
-                proData.agregarProducto(prod);
-                llenarIdProducto();
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(this, "Error al comprar el producto." + e.getMessage());
+            // COMPRANDO PRODUCTO..
+            String nom = jT_nombreProducto_DetalleCompra.getText();
+            int cantidad = Integer.parseInt(jT_cantidad_DetalleCompra.getText());
+            Double precio = Double.parseDouble(jT_precioCosto_DetalleCompra.getText());
+            String descrip = jT_descripcion_DetalleCompra.getText();
+
+            if (cantidad < 0) {
+                JOptionPane.showMessageDialog(this, "La cantidad no puede ser negativa. Por favor, ingresa un número positivo.");
+                jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón "guardarDetalle"
+                return; // Terminar la ejecución del método
             }
+
+            if (precio < 0) {
+                JOptionPane.showMessageDialog(this, "El precio no puede ser negativo. Por favor, ingresa un número positivo.");
+                jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón "guardarDetalle"
+                return; // Terminar la ejecución del método
+            }
+
+            Producto prod = new Producto(nom, descrip, precio, cantidad, true);
+            proData.agregarProducto(prod);
+            llenarIdProducto();
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, "Error al registar compra." + ex.getMessage());
+            JOptionPane.showMessageDialog(this, "Error al comprar el producto." + ex.getMessage());
+            jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón "guardarDetalle"
         }
     }//GEN-LAST:event_jB_compraActionPerformed
 
@@ -652,13 +684,38 @@ public class vistaCompra extends javax.swing.JFrame {
             if (cantidad < 0) {
                 JOptionPane.showMessageDialog(this, "La cantidad no puede ser negativa. Por favor, ingresa un número positivo.");
                 jT_cantidad_DetalleCompra.setText(""); // Limpiar el campo de texto
+                jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón "guardarDetalle"
             } else {
+                jB_guardarDetalle.setEnabled(true); // Habilitar el botón "guardarDetalle"
             }
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Ingresa un número válido para la cantidad.");
             jT_cantidad_DetalleCompra.setText(""); // Limpiar el campo de texto
+            jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón "guardarDetalle"
         }
     }//GEN-LAST:event_jT_cantidad_DetalleCompraActionPerformed
+
+    private void jT_precioCosto_DetalleCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_precioCosto_DetalleCompraActionPerformed
+        String input = jT_precioCosto_DetalleCompra.getText();
+        double precio = 0.0;
+
+        try {
+            precio = Double.parseDouble(input);
+
+            // Verificar si el precio es negativo
+            if (precio < 0) {
+                JOptionPane.showMessageDialog(this, "El precio no puede ser negativo. Por favor, ingresa un número positivo.");
+                jT_precioCosto_DetalleCompra.setText(""); // Limpiar el campo de texto
+                jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón "guardarDetalle"
+            } else {
+                jB_guardarDetalle.setEnabled(true); // Habilitar el botón "guardarDetalle"
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Ingresa un número válido para el precio.");
+            jT_precioCosto_DetalleCompra.setText(""); // Limpiar el campo de texto
+            jB_guardarDetalle.setEnabled(false); // Deshabilitar el botón "guardarDetalle"
+        }
+    }//GEN-LAST:event_jT_precioCosto_DetalleCompraActionPerformed
 
     /**
      * @param args the command line arguments

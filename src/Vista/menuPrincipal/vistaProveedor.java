@@ -217,9 +217,7 @@ public class vistaProveedor extends javax.swing.JFrame {
             }
         });
 
-        jB_buscar.setBackground(new java.awt.Color(255, 255, 255));
         jB_buscar.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        jB_buscar.setForeground(new java.awt.Color(0, 0, 0));
         jB_buscar.setText("Buscar");
         jB_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -246,9 +244,7 @@ public class vistaProveedor extends javax.swing.JFrame {
 
         jT_telefonoProveedor.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
 
-        jB_agregarProveedor.setBackground(new java.awt.Color(255, 255, 255));
         jB_agregarProveedor.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_agregarProveedor.setForeground(new java.awt.Color(0, 0, 0));
         jB_agregarProveedor.setText("Agregar ");
         jB_agregarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_agregarProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -257,9 +253,7 @@ public class vistaProveedor extends javax.swing.JFrame {
             }
         });
 
-        jB_editarProveedor.setBackground(new java.awt.Color(255, 255, 255));
         jB_editarProveedor.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_editarProveedor.setForeground(new java.awt.Color(0, 0, 0));
         jB_editarProveedor.setText("Editar");
         jB_editarProveedor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_editarProveedor.addActionListener(new java.awt.event.ActionListener() {
@@ -268,9 +262,7 @@ public class vistaProveedor extends javax.swing.JFrame {
             }
         });
 
-        jB_limpiar.setBackground(new java.awt.Color(255, 255, 255));
         jB_limpiar.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_limpiar.setForeground(new java.awt.Color(0, 0, 0));
         jB_limpiar.setText("Limpiar");
         jB_limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_limpiar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -410,7 +402,7 @@ public class vistaProveedor extends javax.swing.JFrame {
                     .addComponent(jB_limpiar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jB_eliminarProveedor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jL_TituloNuestrosProveedores)
                 .addGap(35, 35, 35)
                 .addComponent(jS_tablaProveedores, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)

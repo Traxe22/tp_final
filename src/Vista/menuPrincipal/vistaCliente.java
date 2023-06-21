@@ -206,9 +206,7 @@ public class vistaCliente extends javax.swing.JFrame {
 
         jT_idCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
 
-        jB_buscarCliente.setBackground(new java.awt.Color(255, 255, 255));
         jB_buscarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_buscarCliente.setForeground(new java.awt.Color(0, 0, 0));
         jB_buscarCliente.setText("BUSCAR");
         jB_buscarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_buscarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -242,9 +240,7 @@ public class vistaCliente extends javax.swing.JFrame {
 
         jT_telefonoCliente.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
 
-        jB_AgregarCliente.setBackground(new java.awt.Color(255, 255, 255));
         jB_AgregarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_AgregarCliente.setForeground(new java.awt.Color(0, 0, 0));
         jB_AgregarCliente.setText("AGREGAR");
         jB_AgregarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_AgregarCliente.addActionListener(new java.awt.event.ActionListener() {
@@ -253,9 +249,7 @@ public class vistaCliente extends javax.swing.JFrame {
             }
         });
 
-        jB_EditarCliente.setBackground(new java.awt.Color(255, 255, 255));
         jB_EditarCliente.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_EditarCliente.setForeground(new java.awt.Color(0, 0, 0));
         jB_EditarCliente.setText("EDITAR");
         jB_EditarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_EditarCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -269,9 +263,7 @@ public class vistaCliente extends javax.swing.JFrame {
             }
         });
 
-        jB_Limpiar.setBackground(new java.awt.Color(255, 255, 255));
         jB_Limpiar.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_Limpiar.setForeground(new java.awt.Color(0, 0, 0));
         jB_Limpiar.setText("LIMPIAR");
         jB_Limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_Limpiar.setMaximumSize(new java.awt.Dimension(90, 29));
