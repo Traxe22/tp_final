@@ -133,7 +133,7 @@ public class ProductoData {
 
     public List<Producto> obtenerProductosTodos() {
         List<Producto> productos = new ArrayList<>();
-        String sql = "SELECT * FROM producto";
+        String sql = "SELECT * FROM producto ORDER BY idProducto DESC";
         try {
             Statement statement = con.createStatement();
             ResultSet rs = statement.executeQuery(sql);

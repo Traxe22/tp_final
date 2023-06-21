@@ -23,6 +23,7 @@ public class vistaInventario extends javax.swing.JFrame {
 
     public vistaInventario() {
         initComponents();
+        borrarTabla();
         armarCabecera();
         llenarTabla();
     }
@@ -41,6 +42,7 @@ public class vistaInventario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jB_Eliminar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jP_header = new javax.swing.JPanel();
         HomeBtn = new javax.swing.JPanel();
@@ -67,10 +69,20 @@ public class vistaInventario extends javax.swing.JFrame {
         jL_tituloProductos = new javax.swing.JLabel();
         jL_precioActual = new javax.swing.JLabel();
         jT_precioactual = new javax.swing.JTextField();
-        jB_Eliminar = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jB_limpiar = new javax.swing.JButton();
+
+        jB_Eliminar.setBackground(new java.awt.Color(255, 51, 51));
+        jB_Eliminar.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
+        jB_Eliminar.setForeground(new java.awt.Color(255, 255, 255));
+        jB_Eliminar.setText("ELIMINAR");
+        jB_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jB_Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_EliminarActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
@@ -224,9 +236,7 @@ public class vistaInventario extends javax.swing.JFrame {
         jT_tablaProductos.setSelectionBackground(new java.awt.Color(204, 0, 204));
         jS_tablaProductos.setViewportView(jT_tablaProductos);
 
-        jB_VerificarStock.setBackground(new java.awt.Color(255, 255, 255));
         jB_VerificarStock.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_VerificarStock.setForeground(new java.awt.Color(0, 0, 0));
         jB_VerificarStock.setText("VERIFICAR STOCK");
         jB_VerificarStock.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_VerificarStock.addActionListener(new java.awt.event.ActionListener() {
@@ -239,9 +249,7 @@ public class vistaInventario extends javax.swing.JFrame {
         jL_idProductoTexto.setForeground(new java.awt.Color(255, 255, 255));
         jL_idProductoTexto.setText("ID PRODUCTO");
 
-        jB_buscarProducto.setBackground(new java.awt.Color(255, 255, 255));
         jB_buscarProducto.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
-        jB_buscarProducto.setForeground(new java.awt.Color(0, 0, 0));
         jB_buscarProducto.setText("OK");
         jB_buscarProducto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_buscarProducto.addActionListener(new java.awt.event.ActionListener() {
@@ -266,9 +274,7 @@ public class vistaInventario extends javax.swing.JFrame {
         jL_estado.setForeground(new java.awt.Color(255, 255, 255));
         jL_estado.setText("ESTADO");
 
-        jB_Guarcambios_productos.setBackground(new java.awt.Color(255, 255, 255));
         jB_Guarcambios_productos.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_Guarcambios_productos.setForeground(new java.awt.Color(0, 0, 0));
         jB_Guarcambios_productos.setText("GUARDAR CAMBIOS");
         jB_Guarcambios_productos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_Guarcambios_productos.addActionListener(new java.awt.event.ActionListener() {
@@ -286,20 +292,7 @@ public class vistaInventario extends javax.swing.JFrame {
         jL_precioActual.setForeground(new java.awt.Color(255, 255, 255));
         jL_precioActual.setText("PRECIO ACTUAL");
 
-        jB_Eliminar.setBackground(new java.awt.Color(255, 51, 51));
-        jB_Eliminar.setFont(new java.awt.Font("HP Simplified", 1, 18)); // NOI18N
-        jB_Eliminar.setForeground(new java.awt.Color(255, 255, 255));
-        jB_Eliminar.setText("ELIMINAR");
-        jB_Eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jB_Eliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jB_EliminarActionPerformed(evt);
-            }
-        });
-
-        jB_limpiar.setBackground(new java.awt.Color(255, 255, 255));
         jB_limpiar.setFont(new java.awt.Font("HP Simplified", 1, 15)); // NOI18N
-        jB_limpiar.setForeground(new java.awt.Color(0, 0, 0));
         jB_limpiar.setText("LIMPIAR");
         jB_limpiar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jB_limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -336,12 +329,8 @@ public class vistaInventario extends javax.swing.JFrame {
                                         .addGap(49, 49, 49)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jB_Eliminar)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGap(10, 10, 10)
-                                                        .addComponent(jB_limpiar)))
-                                                .addGap(38, 38, 38)
+                                                .addComponent(jB_limpiar)
+                                                .addGap(65, 65, 65)
                                                 .addComponent(jB_VerificarStock))
                                             .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addComponent(jL_estado)
@@ -397,7 +386,7 @@ public class vistaInventario extends javax.swing.JFrame {
                         .addComponent(jT_idProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jL_nombreProductoTexto)
                     .addComponent(jT_nombresDelProducto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -411,19 +400,12 @@ public class vistaInventario extends javax.swing.JFrame {
                     .addComponent(jT_StockProductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jL_estado)
                     .addComponent(jT_Estadoproductos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jB_Guarcambios_productos)
-                            .addComponent(jB_VerificarStock))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addComponent(jB_limpiar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jB_Eliminar)
-                        .addGap(23, 23, 23))))
+                .addGap(48, 48, 48)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jB_Guarcambios_productos)
+                    .addComponent(jB_VerificarStock)
+                    .addComponent(jB_limpiar))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -695,6 +677,7 @@ public class vistaInventario extends javax.swing.JFrame {
     }
 
     private void llenarTabla() {
+        borrarTabla();
         List<Producto> productos = prodData.obtenerProductosTodos();
         for (Producto producto : productos) {
             String estado = producto.isEstado() ? "Activo" : "No Activo";
